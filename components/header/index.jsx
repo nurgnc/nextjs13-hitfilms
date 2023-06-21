@@ -10,7 +10,7 @@ const Header = () => {
       <div className={styles.headerWrapper}>
         <Link href='/' className={styles.logo}>
           <FaPlayCircle />
-          NETFILMS
+          HITFILMS
         </Link>
         <nav className={styles.navigationMenu}>
           <Link href={'/'}>Movies</Link>
