@@ -13,6 +13,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr" className={interFontFamily.className}>
       <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-itunes-app" content="app-id=1106420758, app-argument=https://apps.apple.com/tr/app/idefix/id1106420758?l=tr" />
         <meta name="google-play-app" content="app-id=tr.com.idefix.android" />
       </head>
