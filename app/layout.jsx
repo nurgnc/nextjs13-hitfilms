@@ -14,22 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr" className={interFontFamily.className}>
       <head>
-        <link rel="stylesheet" href="node_modules/smartbanner.js/dist/smartbanner.min.css" />
-        <Script src="node_modules/smartbanner.js/dist/smartbanner.min.js"></Script>
-        {/* <!-- Start SmartBanner configuration --> */}
-        <meta name="smartbanner:title" content="Smart Application" />
-        <meta name="smartbanner:author" content="SmartBanner Contributors" />
-        <meta name="smartbanner:price" content="FREE" />
-        <meta name="smartbanner:price-suffix-apple" content=" - On the App Store" />
-        <meta name="smartbanner:price-suffix-google" content=" - In Google Play" />
-        <meta name="smartbanner:icon-apple" content="https://url/to/apple-store-icon.png" />
-        <meta name="smartbanner:icon-google" content="https://url/to/google-play-icon.png" />
-        <meta name="smartbanner:button" content="VIEW" />
-        <meta name="smartbanner:button-url-apple" content="https://ios/application-url" />
-        <meta name="smartbanner:button-url-google" content="https://android/application-url" />
-        <meta name="smartbanner:enabled-platforms" content="android,ios" />
-        <meta name="smartbanner:close-label" content="Close" />
-        {/* <!-- End SmartBanner configuration --> */}
+        <meta name="apple-itunes-app" content="app-id=1106420758, app-argument=https://apps.apple.com/tr/app/idefix/id1106420758?l=tr" />
+        <meta name="google-play-app" content="app-id=tr.com.idefix.android" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="node_modules/smart-app-banner/dist/smart-app-banner.css" type="text/css" media="screen" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="android-touch-icon" href="android-icon.png" />
 
       </head>
       <body className='container'>
@@ -38,6 +29,26 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <Script src="node_modules/smart-app-banner/dist/smart-app-banner.js"></Script>
+        <Script id='smartbanner' type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `new SmartBanner({
+          daysHidden: 15,   // days to hide banner after close button is clicked (defaults to 15)
+          daysReminder: 90, // days to hide banner after "VIEW" button is clicked (defaults to 90)
+          appStoreLanguage: 'us', // language code for the App Store (defaults to user's browser language)
+          title: 'MyPage',
+          author: 'MyCompany LLC',
+          button: 'VIEW',
+          store: {
+              ios: 'On the App Store',
+              android: 'In Google Play',
+              windows: 'In Windows store'
+          },
+          price: {
+              ios: 'FREE',
+              android: 'FREE',
+              windows: 'FREE'
+          }`,
+        }} />
       </body>
 
     </html>

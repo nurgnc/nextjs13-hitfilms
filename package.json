@@ -16,6 +16,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
-    "smartbanner.js": "^1.19.3"
+    "smart-app-banner": "^2.0.0"
   }
 }
